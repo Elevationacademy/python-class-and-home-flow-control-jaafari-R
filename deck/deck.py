@@ -17,10 +17,11 @@ class Deck:
     def shuffle(self):
         random.shuffle(self.deck)
 
-    #
+    # pops a card from the deck
     def deal(self):
         return next(self)
 
+    # pops every card in the deck then prints it
     def iteration(self):
         for card in self.deck[::-1]:
             print(next(self))
@@ -36,17 +37,20 @@ class Deck:
         else:
             raise StopIteration("Deck is empty!")
 
+    # returns True if the deck is not empty, False if it is empty
     def __bool__(self):
         if self.deck:
             return True
         else:
             return False
 
+
 def deal_if_not_empty(mydeck):
     if mydeck:
         print(mydeck.deal())
     else:
-        print( "the deck is empty" )
+        print("the deck is empty")
+
 
 if __name__ == "__main__":
     deck = Deck()
@@ -55,6 +59,5 @@ if __name__ == "__main__":
     deal_if_not_empty(deck)
     deck.iteration()
     deal_if_not_empty(deck)
-
 
     # print(deck.iteration())
