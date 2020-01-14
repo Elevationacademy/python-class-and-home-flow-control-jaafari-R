@@ -13,7 +13,7 @@ def validate_passwd(password):
         elif let.isdigit():
             count_numbers += 1
         elif():
-            pass #tbc.
+            pass #not done
         else:
             pass
 
