@@ -27,7 +27,7 @@ class Deck:
             print(next(self))
 
     def __iter__(self):
-        return iter(self.deck)
+        return self
 
     def __next__(self):
         if len(self.deck):  # if the deck contains cards
@@ -54,10 +54,17 @@ def deal_if_not_empty(mydeck):
 
 if __name__ == "__main__":
     deck = Deck()
+    print(deck.deck)
+    deck_it = iter(deck)
+    print(next(deck_it))
     deal_if_not_empty(deck)
-    deal_if_not_empty(deck)
-    deal_if_not_empty(deck)
-    deck.iteration()
-    deal_if_not_empty(deck)
+    print(next(deck_it))
+    print(next(deck_it))
+    print(deck.deck)
+
+    # deal_if_not_empty(deck)
+    # deal_if_not_empty(deck)
+    # deck.iteration()
+    # deal_if_not_empty(deck)
 
     # print(deck.iteration())
